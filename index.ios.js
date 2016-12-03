@@ -7,11 +7,12 @@
    Eg, we are doing this to fix this 'Text' is not defined error
 */
 import React from 'react';
-import { AppRegistry } from 'react-native';
+import { AppRegistry, View } from 'react-native';
 
 // we follow this syntax because, header.js is user defined which is different
 // from the Npm modules.
-import Header from './src/components/header';
+import Header from './src/components/Header';
+import AlbumList from './src/components/AlbumList';
 
 // Step 2 - Create a Component
 // A component is a javascript function
@@ -32,9 +33,24 @@ import Header from './src/components/header';
   "Props" in React.
 
   By passing props, Header component value change
+
+  The App component is a functional component. We can also have Class component.
+  Functional Component :
+    Static Data goes in, JSX comes out
+    Traddtionally we use this for presentaion
+    Cant handle fetching data
+    Easy to write
+  Class Component :
+    used for dyanamic sources of data
+    Handles any data that might change ( fetching data, user events etc ...)
+    Knows when it gets erendered to the device (useful data fetching)
+    More code to write
 */
 const App = () => (
-    <Header headerText={'Albums!'} />
+    <View>
+      <Header headerText={'Albums!'} />
+      <AlbumList />
+    </View>
 );
 
 // Step 3 - Render it to the device
