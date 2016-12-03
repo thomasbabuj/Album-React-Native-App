@@ -8,7 +8,21 @@ import { Text } from 'react-native';
   return value then we dont use () and place return statment in the first line.
 */
 const Header = () => {
-  return <Text>Albums!</Text>;
+  // using destructing to refer our styles
+
+  const { textStyle } = styles;
+
+  // the style here is a Prop (property)
+  return <Text style={textStyle}>Albums!</Text>;
+};
+
+/*
+ we create new object for styles below our component
+*/
+const styles = {
+  textStyle: {
+    fontSize: 20
+  }
 };
 
 // Step 3 - Make the component available to other parts of the app
@@ -21,6 +35,6 @@ const Header = () => {
   the below line means, take the components and this component must available
   in our probject other files
 
-  
+
 */
 export default Header;
