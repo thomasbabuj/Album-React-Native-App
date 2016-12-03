@@ -12,11 +12,15 @@ import { Text, AppRegistry } from 'react-native';
 // Step 2 - Create a Component
 // A component is a javascript function
 // returns some amount of JSX
-const App = () => {
-  return (
+/*
+ Error : Unexpected block statement surrounding arrow body
+ this means, we can fix this by removing the braces and return statement.
+ this is because, in this app function we are only returning an single object,
+ so we dont need to put return statement and the curly braces.
+*/
+const App = () => (
     <Text>Some Text</Text>
-  );
-};
+);
 
 // Step 3 - Render it to the device
 /* first parameter -> same name as our project
