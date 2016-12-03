@@ -1,6 +1,6 @@
 // Step 1 - Import libararies for making a component
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 // Step 2 - Making a component
 /*
@@ -10,16 +10,24 @@ import { Text } from 'react-native';
 const Header = () => {
   // using destructing to refer our styles
 
-  const { textStyle } = styles;
+  const { textStyle, viewStyle } = styles;
 
   // the style here is a Prop (property)
-  return <Text style={textStyle}>Albums!</Text>;
+  // use View tag to position our elements in the screen
+  return (
+    <View style={viewStyle}>
+      <Text style={textStyle}>Albums!</Text>
+    </View>
+  );
 };
 
 /*
  we create new object for styles below our component
 */
 const styles = {
+  viewStyle: {
+    backgroundColor: '#f8f8f8'
+  },
   textStyle: {
     fontSize: 20
   }
