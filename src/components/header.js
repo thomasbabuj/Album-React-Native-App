@@ -22,11 +22,29 @@ const Header = () => {
 };
 
 /*
- we create new object for styles below our component
+ we create new object for styles below our component,
+ justifyContent and alignItems are both property we used to position our elements
+ justifyContent: (move the element up and down)
+          'flex-end' => appear on bottom
+          'center',
+          'flex-start' => appears on top
+ alignItems :
+          'start'
+          'center',
+          'end'
 */
 const styles = {
   viewStyle: {
-    backgroundColor: '#f8f8f8'
+    backgroundColor: '#f8f8f8',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 60,
+    paddingTop: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    elevation: 2,
+    position: 'relative'
   },
   textStyle: {
     fontSize: 20
