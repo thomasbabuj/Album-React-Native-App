@@ -26,9 +26,15 @@ import Header from './src/components/header';
  its a two step process,
    step 1 , import the header into the App components
    step 2,  nest inside the App
+
+ Props :
+  Whenever we want some data to pass from parent to child component we use
+  "Props" in React.
+
+  By passing props, Header component value change
 */
 const App = () => (
-    <Header />
+    <Header headerText={'Albums!'} />
 );
 
 // Step 3 - Render it to the device

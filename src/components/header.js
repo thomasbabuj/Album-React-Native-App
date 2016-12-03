@@ -7,7 +7,7 @@ import { Text, View } from 'react-native';
   This is a fat-arrow function, and standard partice is if there is only one
   return value then we dont use () and place return statment in the first line.
 */
-const Header = () => {
+const Header = (props) => {
   // using destructing to refer our styles
 
   const { textStyle, viewStyle } = styles;
@@ -16,7 +16,7 @@ const Header = () => {
   // use View tag to position our elements in the screen
   return (
     <View style={viewStyle}>
-      <Text style={textStyle}>Albums!</Text>
+      <Text style={textStyle}>{props.headerText}</Text>
     </View>
   );
 };
