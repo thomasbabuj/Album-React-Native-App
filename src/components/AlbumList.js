@@ -6,8 +6,9 @@ We cant remove React from the import,its manily because babel need this. So here
 when we destructure "Componet" we still import React.
 */
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+import AlbumDetail from './AlbumDetail';
 
 /*
  Gonna refactor our current functional code to class component.
@@ -88,7 +89,14 @@ class AlbumList extends Component {
           each album
     */
     return this.state.albums.map(album =>
-      <Text key={album.title}>{album.title}</Text>
+       /*
+        Need to show one details for each album. So
+        we need to communicate from Parent (AlbumList) to Child (AlbumLis) component
+        -So parent to child we will be using props ( -Pass the album to albumdetail
+        as a prop)
+        - props name can be anything ( no need to be album )
+       */
+      <AlbumDetail key={album.title} album={album} />
     );
   }
   render() {
