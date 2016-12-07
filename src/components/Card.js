@@ -2,9 +2,22 @@ import React from 'react';
 import { View } from 'react-native';
 
 // Function component
-const Card = () => {
+// Using props to receive props from parent
+
+/*
+ In order to pass component as props
+   Step 1 ) Find the component we want to wrap inside the component
+                - for our example, AlbumDetail so in AlbumDetail component we
+                remove the Text and change to Card.
+        2)  by including props.children, will contains the component which we
+        want to pass from AlbumDetail
+
+*/
+const Card = (props) => {
   return (
-    <View style={styles.containerStyle} />
+    <View style={styles.containerStyle}>
+      {props.children}
+    </View>
   );
 };
 

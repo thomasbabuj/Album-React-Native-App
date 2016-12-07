@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
+import Card from './Card';
 
 
 /*
@@ -10,9 +11,9 @@ props -> receving the props from parent
 */
 const AlbumDetail = (props) => (
   // making use of the album props from parent
-  <View>
+  <Card>
     <Text>{props.album.title}</Text>
-  </View>
+  </Card>
 );
 
 
