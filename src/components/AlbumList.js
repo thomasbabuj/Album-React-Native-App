@@ -75,8 +75,21 @@ class AlbumList extends Component {
 
   // Helper methods
   renderAlbums() {
-    // using fat function inside albums map fuction
-    return this.state.albums.map(album => <Text >{album.title}</Text>);
+    /*
+      - using fat function inside albums map fuction
+      - this map function produces an array of albums
+      - Unique key prop warning :
+          Whenever we show components in an array, must have a key property
+          associated with that.
+          The purpose of this for React to render the list fastly (for performance)
+          Need to set a unique key, not suppose to use index of an array,
+          usually use id from the remote data.
+          In our example case we can use "album.title" since its unique for
+          each album
+    */
+    return this.state.albums.map(album =>
+      <Text key={album.title}>{album.title}</Text>
+    );
   }
   render() {
     /*
