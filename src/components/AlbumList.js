@@ -6,7 +6,7 @@ We cant remove React from the import,its manily because babel need this. So here
 when we destructure "Componet" we still import React.
 */
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
 
@@ -106,13 +106,19 @@ class AlbumList extends Component {
     from the remote url.
 
           console.log(this.state);
+
+          By default, React-Native doesn't have scrolling.
+
+          To implment scroll,
+            Identify the content, need scrolling
+            Import a ScrollView and replaced it with View tag
     */
 
 
     return (
-      <View>
+      <ScrollView>
         {this.renderAlbums()}
-      </View>
+      </ScrollView>
     );
   }
 }

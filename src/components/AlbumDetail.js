@@ -10,17 +10,25 @@ import CardSection from './CardSection';
 
 props -> receving the props from parent
 destructing props into album
+
 */
 const AlbumDetail = ({ album }) => {
   // destructing  album into specific variables
-  const { title, artist, thumbnail_image } = album;
-  const { thumbnailStyle, headerContainerStyle } = styles;
+  const { title, artist, thumbnail_image, image } = album;
+  const { thumbnailStyle,
+          headerContainerStyle,
+          thumbnailContainerStyle,
+          headerTextStyle,
+          imageStyle
+        } = styles;
+
+  console.log(image);
 
   return (
     // making use of the album props from parent
     <Card>
       <CardSection>
-        <View>
+        <View style={thumbnailContainerStyle}>
           <Image
               source={{ uri: thumbnail_image }}
               style={thumbnailStyle}
@@ -28,10 +36,17 @@ const AlbumDetail = ({ album }) => {
         </View>
 
         <View style={headerContainerStyle}>
-          <Text>{ title }</Text>
+          <Text style={headerTextStyle}>{ title }</Text>
           <Text>{ artist }</Text>
         </View>
 
+      </CardSection>
+
+      <CardSection>
+           <Image
+               source={{ uri: image }}
+               style={imageStyle}
+           />
       </CardSection>
     </Card>
   );
@@ -45,16 +60,27 @@ const AlbumDetail = ({ album }) => {
      otherwise we wont be able to see the image.
 */
 const styles = {
-  containerStyle: {
-
-  },
   headerContainerStyle: {
     flexDirection: 'column',
     justifyContent: 'space-around'
   },
+  headerTextStyle: {
+    fontSize: 18
+  },
   thumbnailStyle: {
     height: 50,
     width: 50
+  },
+  thumbnailContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 10,
+    marginRight: 10
+  },
+  imageStyle: {
+    height: 300,
+    flexGrow: 1,
+    width: null
   }
 };
 
