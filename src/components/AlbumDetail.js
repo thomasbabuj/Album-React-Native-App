@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
@@ -12,10 +12,15 @@ import Button from './Button';
 props -> receving the props from parent
 destructing props into album
 
+ Defining custom params for this button
+ pressButton is a custom paramenter speific to this button
+
+ using React's Linking API to open the url in the browser
+
 */
 const AlbumDetail = ({ album }) => {
   // destructing  album into specific variables
-  const { title, artist, thumbnail_image, image } = album;
+  const { title, artist, thumbnail_image, image, url } = album;
   const { thumbnailStyle,
           headerContainerStyle,
           thumbnailContainerStyle,
@@ -51,7 +56,9 @@ const AlbumDetail = ({ album }) => {
       </CardSection>
 
       <CardSection>
-        <Button />
+        <Button pressButton={() => Linking.openURL(url)}>
+          Buy Now !
+        </Button>
       </CardSection>
     </Card>
   );
